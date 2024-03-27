@@ -10,7 +10,6 @@
 ```
   pnpm install
 ```
-
 3. tener nest CLI instaladado
 ```
 pnpm i -g @nestjs/cli
@@ -19,7 +18,15 @@ pnpm i -g @nestjs/cli
 ```
 docker-compose up -d
 ```
-5. Cargar la base de datos con el seed:
+5. Clonar arcvhio __.env.template__ y renombrar a __.env__ 
+
+6. Llenar las varaibles de entorno definidas en el ```.env```
+
+7. Ejecutar la palicación en dev:
+```
+pnpm run start:dev
+```
+8. Cargar la base de datos con el seed:
 ```
 http://localhost:3000/api/v2/seed
 ```
