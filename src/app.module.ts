@@ -12,7 +12,6 @@ import { joiValitadioSchema } from './config/joi.validation';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load:[EnvConfiguration],
       validationSchema: joiValitadioSchema,
     }),
     
@@ -20,7 +19,9 @@ import { joiValitadioSchema } from './config/joi.validation';
       rootPath: join(__dirname,'..','public')
     }),
     
-    MongooseModule.forRoot(process.env.MONGO_URL),
+    MongooseModule.forRoot(process.env.MONGO_URL,{
+      dbName: 'pokemonDB',
+    }),
   
     PokemonModule,
    
